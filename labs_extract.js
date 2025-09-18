@@ -364,7 +364,7 @@ function extractDXA(text) {
   while ((ketMatch = ketRe.exec(text)) !== null) {
     const ketPos = ketMatch.index;
     // tìm lần xuất hiện "Trung bình cột sống thắt lưng" gần nhất trước ketPos
-    const tRe = /Trung\s*bình\s*cột\s+sống\s*thắt\s*lưng/gi;
+    const tRe = /^(?=.*thắt\s*lưng)(?=.*trung\s*bình).*$/gi;
     let last = null;
     let tMatch;
     while ((tMatch = tRe.exec(text)) !== null) {
